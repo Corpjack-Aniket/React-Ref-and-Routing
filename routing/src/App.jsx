@@ -7,6 +7,9 @@ import Contact from './component/Contact'
 import Navbar from './component/Navbar'
 import Activelink from './component/Activelink'
 import PageNotFound from './component/PageNotFound'
+import Products from './component/Products'
+import Shirts from './component/Shirts'
+import Jeans from './component/Jeans'
 
 
 function App() {
@@ -40,6 +43,11 @@ const NavigatetoWhere = () =>{
    <Routes>
     <Route path='/' element={<Home/>}/> //! slash represent localhostn:3000
     <Route path='/about' element={<About/>}/>
+    //! Nested Route example here 
+    <Route path='/products' element={<Products/>}>
+      <Route path='shirts' element={<Shirts/>} />
+      <Route path='jeans' element={<Jeans/>}/>
+    </Route>
     <Route path='/contact' element={<Contact/>}/>
     <Route path='*' element={<PageNotFound/>} /> //!* means that if any route did not match it will redirect to this route.
    </Routes>
