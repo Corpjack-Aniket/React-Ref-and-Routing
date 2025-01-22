@@ -6,6 +6,7 @@ import About from './component/About'
 import Contact from './component/Contact'
 import Navbar from './component/Navbar'
 import Activelink from './component/Activelink'
+import PageNotFound from './component/PageNotFound'
 
 
 function App() {
@@ -37,9 +38,10 @@ const NavigatetoWhere = () =>{
     <>
     <Activelink/>
    <Routes>
-    <Route path='/' element={<Home/>}/>
+    <Route path='/' element={<Home/>}/> //! slash represent localhostn:3000
     <Route path='/about' element={<About/>}/>
     <Route path='/contact' element={<Contact/>}/>
+    <Route path='*' element={<PageNotFound/>} /> //!* means that if any route did not match it will redirect to this route.
    </Routes>
 
    {/* //! Navigating using button click  */}
@@ -55,8 +57,8 @@ const NavigatetoWhere = () =>{
    <button onClick={()=>Navigateto('/contact')}>Contact</button> */}
 
    {/* //! condition based Navigation  */}
-   <button onClick={()=>NavigatetoWhere()}>Contact</button>
-   <button onClick={()=>navigate(-1)}>Go Back</button>
+   {/* <button onClick={()=>NavigatetoWhere()}>Contact</button>
+   <button onClick={()=>navigate(-1)}>Go Back</button> */}
 
    </>
   )
