@@ -54,14 +54,15 @@ const NavigatetoWhere = () =>{
       <Route path='jeans' element={<Jeans/>}/>
     </Route>
     <Route path='/contact' element={<Contact/>}/>
-    <Route path='/user' element={<User/>  }/>
+    <Route path='/user' element={<User/>  }>
     {/* this is first way */}
     {/* <Route path='/user/1' element={<UserDetails/>}/>
     <Route path='/user/2' element={<UserDetails/>}/>
     <Route path='/user/3' element={<UserDetails/>}/> */}
     {/* this is second way */}
-    <Route path='/user/:id' element={<UserDetails/>}/>
-    <Route path='/user/admin' element={<Admin/> }/>
+    <Route path=':id' element={<UserDetails/>}/>
+    <Route path='admin' element={<Admin/> }/>
+   </Route>
     <Route path='*' element={<PageNotFound/>} /> //!* means that if any route did not match it will redirect to this route.
    </Routes>
 
