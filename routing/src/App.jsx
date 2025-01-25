@@ -10,6 +10,9 @@ import PageNotFound from './component/PageNotFound'
 import Products from './component/Products'
 import Shirts from './component/Shirts'
 import Jeans from './component/Jeans'
+import User from './component/User'
+import UserDetails from './component/UserDetails'
+import Admin from './Admin'
 
 
 function App() {
@@ -45,10 +48,20 @@ const NavigatetoWhere = () =>{
     <Route path='/about' element={<About/>}/>
     //! Nested Route example here 
     <Route path='/products' element={<Products/>}>
+    {/* //!creating index root for product root */}
+    <Route index element={<Shirts/>}></Route>
       <Route path='shirts' element={<Shirts/>} />
       <Route path='jeans' element={<Jeans/>}/>
     </Route>
     <Route path='/contact' element={<Contact/>}/>
+    <Route path='/user' element={<User/>  }/>
+    {/* this is first way */}
+    {/* <Route path='/user/1' element={<UserDetails/>}/>
+    <Route path='/user/2' element={<UserDetails/>}/>
+    <Route path='/user/3' element={<UserDetails/>}/> */}
+    {/* this is second way */}
+    <Route path='/user/:id' element={<UserDetails/>}/>
+    <Route path='/user/admin' element={<Admin/> }/>
     <Route path='*' element={<PageNotFound/>} /> //!* means that if any route did not match it will redirect to this route.
    </Routes>
 
